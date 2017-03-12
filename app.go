@@ -14,11 +14,13 @@ import (
 	_ "github.com/lib/pq"
 )
 
+// App struct contains mux router and sql db connection
 type App struct {
 	Router *mux.Router
 	DB     *sql.DB
 }
 
+// Initialize function
 func (a *App) Initialize(user, password, dbname string) {
 	connectionString := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable", user, password, dbname)
 
@@ -32,6 +34,7 @@ func (a *App) Initialize(user, password, dbname string) {
 	a.initializeRoutes()
 }
 
+// Run function
 func (a *App) Run(addr string) {
 	log.Fatal(http.ListenAndServe(":8000", a.Router))
 }
