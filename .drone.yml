@@ -11,7 +11,7 @@ build:
     - go get github.com/lib/pq
     - go test -v
 
-compose:
+services:
   postgres:
     image: postgres
     environment:
