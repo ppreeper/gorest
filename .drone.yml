@@ -13,3 +13,4 @@ service:
         environment:
             - POSTGRES_USER=gorest
             - POSTGRES_PASSWORD=gorest
+            - POSTGRES_DB=gorest
