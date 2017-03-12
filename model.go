@@ -1,4 +1,10 @@
 //model.go
+package main
+
+import (
+    "database/sql"
+    "errors"
+)
 
 type product struct {
     ID      int     'json:"id"'
