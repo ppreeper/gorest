@@ -14,7 +14,7 @@ pipeline:
 
 services:
   postgres:
-    image: postgres
+    image: postgres:9.6
     environment:
       - POSTGRES_USER=gorest
       - POSTGRES_PASSWORD=gorest
