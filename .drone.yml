@@ -11,4 +11,5 @@ service:
     postgres:
         image: postgres:9.4.5
         environment:
-            - POSTGRES_USER=myapp
+            - POSTGRES_USER=gorest
+            - POSTGRES_PASSWORD=gorest
