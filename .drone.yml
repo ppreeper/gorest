@@ -1,19 +1,20 @@
-build:
-  image: golang
-  environment:
-    - TEST_DB_USERNAME=gorest
-    - TEST_DB_PASSWORD=gorest
-    - TEST_DB_NAME=gorest
-  commands:
-    - go version
-    - go get github.com/gorilla/mux
-    - go get github.com/lib/pq
-    - go test -v
-
-compose:
-  postgres:
-    image: postgres
+pipeline:
+  build:
+    image: golang
     environment:
-      - POSTGRES_USER=gorest
-      - POSTGRES_PASSWORD=gorest
-      - POSTGRES_DB=gorest
+      - TEST_DB_USERNAME=gorest
+      - TEST_DB_PASSWORD=gorest
+      - TEST_DB_NAME=gorest
+    commands:
+      - go version
+      - go get github.com/gorilla/mux
+      - go get github.com/lib/pq
+      - go test -v
+
+  service:
+    postgres:
+      image: postgres
+      environment:
+        - POSTGRES_USER=gorest
+        - POSTGRES_PASSWORD=gorest
+        - POSTGRES_DB=gorest
