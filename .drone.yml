@@ -9,7 +9,7 @@ pipeline:
 
 service:
     postgres:
-        image: postgres:9.4.5
+        image: postgres
         environment:
             - POSTGRES_USER=gorest
             - POSTGRES_PASSWORD=gorest
