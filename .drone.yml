@@ -11,10 +11,10 @@ pipeline:
       - go get github.com/lib/pq
       - go test -v
 
-services:
-  postgres:
-    image: postgres
-    environment:
-      - POSTGRES_USER=gorest
-      - POSTGRES_PASSWORD=gorest
-      - POSTGRES_DB=gorest
+  services:
+    postgres:
+      image: postgres
+      environment:
+        - POSTGRES_USER=gorest
+        - POSTGRES_PASSWORD=gorest
+        - POSTGRES_DB=gorest
