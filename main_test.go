@@ -27,7 +27,7 @@ func TestMain(m *testing.M) {
 }
 
 func ensureTableExists() {
-    if _, err := a.DB.Exec(tableCreationQuery)l err != nil {
+    if _, err := a.DB.Exec(tableCreationQuery); err != nil {
         log.Fatal(err)
     }
 }
