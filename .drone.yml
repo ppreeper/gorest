@@ -11,7 +11,7 @@ pipeline:
       - go get github.com/lib/pq
       - go test -v
 
-service:
+compose:
   postgres:
     image: postgres
     environment:
