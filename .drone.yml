@@ -2,7 +2,7 @@ pipeline:
   build:
     image: golang
     commands:
-      - go get
+      - go version
       - go get github.com/gorilla/mux
       - go get github.com/lib/pq
       - go build
