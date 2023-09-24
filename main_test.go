@@ -1,6 +1,4 @@
-// main_test.go
-
-package main_test
+package main
 
 import (
 	"bytes"
@@ -11,14 +9,12 @@ import (
 	"os"
 	"strconv"
 	"testing"
-
-	"."
 )
 
-var a main.App
+var a App
 
 func TestMain(m *testing.M) {
-	a = main.App{}
+	a = App{}
 	a.Initialize(
 		os.Getenv("TEST_DB_USERNAME"),
 		os.Getenv("TEST_DB_PASSWORD"),

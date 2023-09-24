@@ -1,5 +1,4 @@
-//app.go
-
+// app.go
 package main
 
 import (
@@ -11,7 +10,7 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	_ "github.com/lib/pq"
+	_ "github.com/jackc/pgx/v4/stdlib"
 )
 
 // App struct contains mux router and sql db connection
@@ -25,7 +24,7 @@ func (a *App) Initialize(user, password, dbname string) {
 	connectionString := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable", user, password, dbname)
 
 	var err error
-	a.DB, err = sql.Open("postgres", connectionString)
+	a.DB, err = sql.Open("pgx", connectionString)
 	if err != nil {
 		log.Fatal(err)
 	}
